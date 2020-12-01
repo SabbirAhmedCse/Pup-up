@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Pup up</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .openBtn {
+            display: flex;
+            justify-content: left;
+        }
+
+        .openButton {
+            border: none;
+            border-radius: 5px;
+            background-color: #1c87c9;
+            color: white;
+            padding: 14px 20px;
+            cursor: pointer;
+            position: fixed;
+        }
+
+        .loginPopup {
+            position: relative;
+            width: 100%;
+        }
+
+        .formPopup {
+            display: none;
+            position: fixed;
+            left: 50%;
+            top: 10%;
+            transform: translate(-50%, 10%);
+            border: 3px solid #999999;
+            z-index: 9;
+        }
+        
+        #popupForm {
+            display: block;
+        }
+
+        .formContainer {
+            width: 500px;
+            padding: 20px;
+            background-color: #fff;
+        }
+        
+        label {
+            color: #808080;
+            float: right;
+            cursor: pointer;
+        }
+        label:hover {
+            color: #FF0000;
+        }
+        
+        h2 {
+            color: #CDA737;
+            text-align: center;
+        }
+
+        .formContainer .btn {
+            padding: 10px 10px;
+            border: none;
+            border-radius: 10px;
+            background-color: #8ebf42;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            width: 20%;
+            margin-bottom: 15px;
+            opacity: 0.8;
+        }
+
+        .formContainer .cancel {
+            background-color: #cc0000;
+        }
+        .formContainer .open {
+            background-color: #4CAF50;
+        }
+
+        .formContainer .btn:hover,
+        .openButton:hover {
+            opacity: 1;
+        }
+
+    </style>
+    
+    
+</head>
+
+<body>
+    <h2>Popup Form</h2>
+    
+    <div class="loginPopup">
+        <div class="formPopup" id="popupForm">
+            <form action="/action_page.php" class="formContainer">
+               <label onclick="closeForm()">&#x2716;</label>
+                <h2>Bitcoin accepted here@all time (24h/7)</h2>
+                <hr>
+                <p>
+                    
+                   <b>&#x27A3;</b> Bitcoin is an amazing new technology, which will cause a tectonic shift in the global payment industry:<br>
+It&#039;s Cheap, Secure and Fast!<br>
+We strongly believe in Bitcoin, and we are seeing this cryptocurrency as a real alternative, especially in Africa.<br>
+Thank you for adhering our mission and contributing to a new World!
+               
+                </p>
+                
+                <button type="button" class="btn open" onclick="openForm1()">Next</button>
+            </form>
+        </div>
+
+        <div class="formPopup" id="popupForm1">
+            <form action="/action_page.php" class="formContainer">
+               <label onclick="closeForm()">&#x2716;</label>
+                <h2>How to proceed to exchange your btc in local currency:</h2>
+                <hr>
+                <p>
+                   1. Select &quot;My account&quot;, Then « Transfer Mobile Money ».<br>
+2. You provide your (or your beneficiary) MTN number and the amount in the currency you want to convert to or from.<br>
+3. Then proceed with bitcoin transfer. And that’s it. Your account will be credited within 1h.)<br>
+
+&lt;Gif Image showing the process will be provided&gt;
+                    
+                </p>
+                
+                <button type="button" class="btn open" onclick="openForm3()">Pervious</button>
+                <button type="button" class="btn open" onclick="openForm2()">Next</button>
+            </form>
+        </div>
+
+        <div class="formPopup" id="popupForm2">
+            <form action="/action_page.php" class="formContainer">
+               <label onclick="closeForm()">&#x2716;</label>
+                <h2>Recommend us and make money</h2>
+                <hr>
+                <p>
+                    1. For each invitation you receive one time amount of 3€ after the sum of their first transactions is greater or equals to 5€ <br>
+
+                    2. Each time your friend makes a transaction greater or equals to 10,000.00XAF you will receive 500.00XAF reward<br>
+
+                    3. You will also receive a reward of 100.00 XAF on your friend friend&#039;s transactions when transaction amount is greater or equal to 150,000.00 XAF
+                </p>
+                
+                <button type="button" class="btn open" onclick="openForm4()">Pervious</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+            </form>
+        </div>
+
+    </div>
+    <script>
+        function openForm() {
+            document.getElementById("popupForm").style.display = "block";
+        }
+
+        function openForm1() {
+            document.getElementById("popupForm1").style.display = "block";
+            document.getElementById("popupForm").style.display = "none";
+        }
+
+        function openForm2() {
+            document.getElementById("popupForm2").style.display = "block";
+            document.getElementById("popupForm1").style.display = "none";
+        }
+
+        function openForm3() {
+            document.getElementById("popupForm").style.display = "block";
+            document.getElementById("popupForm1").style.display = "none";
+        }
+
+        function openForm4() {
+            document.getElementById("popupForm1").style.display = "block";
+            document.getElementById("popupForm2").style.display = "none";
+        }
+
+        function closeForm() {
+            document.getElementById("popupForm").style.display = "none";
+            document.getElementById("popupForm1").style.display = "none";
+            document.getElementById("popupForm2").style.display = "none";
+        }
+
+    </script>
+</body>
+
+</html>
